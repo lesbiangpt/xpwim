@@ -1,0 +1,9 @@
+site_name: Windows XP WIM documentation
+repo_url: https://github.com/lesbiangpt/xpwim/
+site_author: 5g
+nav:
+  - Home: 'index.md'
+  - 'What is WIM?': 'wim-intro.md'
+  - 'Repacking Methods':
+    - 'PantherXP': 'pxp.md'
+    - 'Vista Beta 2 WIM': 'b2wim.md'
