@@ -16,7 +16,7 @@ Windows 8.1 and 10 introduced two ways to compress WIM images further.
 
 ### ImageX
 
-ImageX is a command-line tool to create, edit and deploy WIM images. It is part of the Windows Automated Installation Kit (WAIK).
+ImageX is a command-line tool to create, edit and deploy WIM images. Windows Vista RTM's version is included in the Windows Automated Installation Kit, however multiple Longhorn builds have specific ImageX versions for the WIM format they're using.
 
 ### DISM
 
