@@ -94,6 +94,22 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#pantherxp" class="nav-link">PantherXP</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#important-information-before-starting" class="nav-link">Important information before starting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#requirements" class="nav-link">Requirements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#part-one-preparing-the-iso" class="nav-link">Part one: Preparing the ISO</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#part-two-capturing-the-image-to-wim" class="nav-link">Part two: Capturing the image to WIM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -102,7 +118,39 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="pantherxp">PantherXP</h1>
-<p>Work in progress!</p></div>
+<p>PantherXP is a WIM repacking method for Windows XP that automates the repack process and relies on the Panther Deployment engine (version 6.0.4053.0).</p>
+<h2 id="important-information-before-starting">Important information before starting</h2>
+<ul>
+<li>This is a legacy method, meaning this will be soon replaced by a better method (we will keep this in our documentation though!)</li>
+<li>You might have to disable your antivirus before starting</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>A hypervisor (Hyper-V, VMware Workstation Pro, VMware Workstation Player, Oracle VM Virtualbox, QEMU)</li>
+<li>A Windows XP ISO</li>
+<li><a href="https://web.archive.org/web/20160201185504/http://thuun.boot-land.net/PantherXP/files/pantherxp_en_dk.exe">PantherXP</a></li>
+<li>OSFMount</li>
+<li>Any software that can open the contents of an ISO (we recommend 7-Zip)</li>
+</ul>
+<h2 id="part-one-preparing-the-iso">Part one: Preparing the ISO</h2>
+<ol>
+<li>Run the PantherXP executable and extract the files where you wish</li>
+<li>Open the ISO with 7-zip and extract its contents in another folder</li>
+<li>From the PantherXP folder, copy the <code>legacy_boot.cmd</code> file to the root of the extracted ISO</li>
+<li>Run the <code>legacy_boot.cmd</code> file in the extracted ISO root</li>
+<li>Copy the <code>[BOOT]</code> folder to <code>where you extracted PantherXP in\legacy_template\[ROOT]</code></li>
+<li>Copy the <code>i386</code> folder to <code>where you extracted PantherXP in\legacy_template\[ROOT]\sources\Dist</code></li>
+<li>Replace every file that is 0KB in size with their original versions from the ISO. This is because of a flaw in the PantherXP process.</li>
+<li>On the <code>where you extracted PantherXP in\legacy_template\[ROOT]\boot</code> folder, edit <code>WINNT.SIF</code> and replace the following:</li>
+<li>Product key (put in the product key of the ISO you got)</li>
+<li>OrgName</li>
+<li>Then, in <code>where you extracted PantherXP in\legacy_template\[ROOT]\sources\Dist\$OEM$\$1\sysprep\</code> folder, edit <code>sysprep.inf</code>. Yet again, edit the following:</li>
+<li>Product key</li>
+<li>OrgName</li>
+<li>Now head over to <code>where you extracted PantherXP in\build\</code>, and run <code>legacy_cdimage.cmd</code>. It'll now build the ISO. This is NOT based on .wim yet.</li>
+</ol>
+<h2 id="part-two-capturing-the-image-to-wim">Part two: Capturing the image to WIM</h2>
+<p>TBD</p></div>
             </div>
         </div>
 
